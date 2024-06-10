@@ -4,10 +4,9 @@
 {% endblock %}
 {% block content %}
   <h1 class="pb-2 mb-0">Главная страница</h1>
-  {% for ice_cream in ice_cream_list %}
-    <h3>{{ ice_cream.title }}</h3>
-    <p>категория: {{ ice_cream.category__title }}</p>
-    <p>обертка: {{ ice_cream.wrapper__title }}</p>
-    Описание: {{ ice_cream.description }}<hr>
-  {% endfor %}
+  <div class="row">
+    {% for ice_cream in ice_cream_list %}
+      {% include "includes/ice_cream_card.html" %}
+    {% endfor %}
+  </div>
 {% endblock %}
